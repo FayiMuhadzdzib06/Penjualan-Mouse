@@ -1,0 +1,473 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+/* Header */
+.header {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    z-index: 3;
+}
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+.header li a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+.header li a:hover,
+.header .menu-btn:hover {
+    background: rgba(255, 255, 255, .05);
+    color: rgba(255, 255, 255, .8);
+}
+.header .logo {
+    color: rgba(255, 255, 255, .8);
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+/* menu */
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    font-weight: bold;
+}
+.header li a {
+    color: rgba(255, 255, 255, .2);
+}
+/* Menu Icon */
+.header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    caret-color: blue;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+.header .menu-icon .navicon {
+    background: rgba(255, 255, 255, .8);
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+.header .menu-icon .navicon::before,
+.header .menu-icon .navicon::after {
+    background: rgba(255, 255, 255, .8);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.header .menu-icon .navicon::before {
+    top: 5px;
+}
+.header .menu-icon .navicon::after {
+    top: -5px;
+}
+/* Menu Button */
+.header .menu-btn {
+    display: none;
+}
+.header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+}
+.header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+.header .menu-btn:checked ~ .menu-icon .navicon::before {
+    transform: rotate(-45deg);
+}
+.header .menu-btn:checked ~ .menu-icon .navicon::after {
+    transform: rotate(45deg);
+}
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon::before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon::after {
+    top: 0;
+}
+/* 48em = 768px */
+@media(min-width: 48em) {
+    .header li {
+        float: left;
+    }
+    .header li a {
+        padding: 20px 30px;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon {
+        display: none;
+    }
+}
+/* shadow con */
+.container1 {
+    width: 100%;
+    height: 725px;
+    position: absolute;
+    top: 0;
+    background-image: url('img/mousegaming.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container1 .tirai {
+    width: 100%;
+    height: 725px;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container1 .tirai h1 {
+    width: 450px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, .05);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, .8);
+    backdrop-filter: blur(10px);
+}
+/* container2 */
+.container2 {
+    width: 100%;
+    height: 150px;
+    background-color: rgb(247, 247, 247);
+    position: absolute;
+    top: 1125px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+}
+.container2 .fot1 {
+    width: 110px;
+    height: 110px;
+    background-image: url('img/Logitech-Logo-removebg-preview.png');
+    background-size: cover;
+    transition: .5s;
+}
+.container2 .fot1:hover {
+    transform: translateY(-15px);
+}
+.container2 .fot2 {
+    width: 150px;
+    height: 150px;
+    background-image: url('img/rexus_logo_06.png');
+    background-size: cover;
+    transition: .5s;
+}
+.container2 .fot2:hover {
+    transform: translateY(-15px);
+}
+.container2 .fot3 {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-image: url('img/hp.png');
+    background-size: cover;
+    transition: .5s;
+}
+.container2 .fot3:hover {
+    transform: translateY(-15px);
+}
+.container2 .fot4 {
+    width: 120px;
+    height: 120px;
+    background-image: url('img/razerr.png');
+    background-size: cover;
+    transition: .5s;
+}
+.container2 .fot4:hover {
+    transform: translateY(-15px);
+}
+.container2 .fot5 {
+    width: 120px;
+    height: 120px;
+    background-image: url('img/rog.png');
+    background-size: cover;
+    transition: .5s;
+}
+.container2 .fot5:hover {
+    transform: translateY(-15px);
+}
+/* container3 */
+.container3 {
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    top: 725px;
+    background-image: url('img/log.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container3 .tirai {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container3 .tirai h1 {
+    font-size: 50px;
+    color: rgba(255, 255, 255, .8);
+}
+.container3 .tirai p {
+    color: rgba(255, 255, 255, .8);
+    font-size: 30px;
+    text-align: center;
+}
+/* container4 */
+.container4 {
+    position: absolute;
+    top: 1276px;
+    width: 100%;
+    height: 624px;
+    display: flex;
+}
+.container4 .foto {
+    width: 600px;
+    height: 100%;
+    background-image: url('img/laptop.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: -400px -100px;
+    background-repeat: no-repeat;
+}
+.container4 .foto .tirai {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, .9);
+    font-size: 50px;
+    font-weight: bold;
+}
+.container4 .produk {
+    width: 900px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* baris 1 */
+.container4 .produk .baris1 {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.container4 .produk .baris1 .bungkus1 {
+    width: 300px;
+    height: 270px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+.container4 .produk .baris1 .bungkus1:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+.container4 .produk .baris1 .bungkus1:hover .mouse1 {
+    transform: scale(1.25);
+}
+.container4 .produk .baris1 .bungkus1 .mouse1 {
+    width: 170px;
+    height: 170px;
+    background-image: url('img/auroza.png');
+    background-size: cover;
+    background-position: center;
+    transition: .5s;
+}
+.container4 .produk .baris1 .bungkus1 p {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, .8);
+}
+.container4 .produk .baris1 .bungkus2 {
+    width: 300px;
+    height: 270px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+.container4 .produk .baris1 .bungkus2:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+.container4 .produk .baris1 .bungkus2:hover .mouse2 {
+    transform: scale(1.2);
+}
+.container4 .produk .baris1 .bungkus2 .mouse2 {
+    width: 210px;
+    height: 120px;
+    background-image: url('img/logitechMouse.png');
+    background-size: cover;
+    background-position: center;
+    transition: .5s;
+}
+.container4 .produk .baris1 .bungkus2 p {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, .8);
+}
+/* baris 2 */
+.container4 .produk .baris2 {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.container4 .produk .baris2 .bungkus1 {
+    width: 300px;
+    height: 270px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+.container4 .produk .baris2 .bungkus1:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+.container4 .produk .baris2 .bungkus1:hover .mouse1 {
+    transform: scale(1.15);
+}
+.container4 .produk .baris2 .bungkus1 .mouse1 {
+    width: 200px;
+    height: 130px;
+    background-image: url('img/rogmouse.png');
+    background-size: cover;
+    background-position: center;
+    transition: .5s;
+}
+.container4 .produk .baris2 .bungkus1 p {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, .8);
+}
+.container4 .produk .baris2 .bungkus2 {
+    width: 300px;
+    height: 270px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+.container4 .produk .baris2 .bungkus2:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+.container4 .produk .baris2 .bungkus2:hover .mouse2 {
+    transform: scale(1.3);
+}
+.container4 .produk .baris2 .bungkus2 .mouse2 {
+    width: 210px;
+    height: 120px;
+    background-image: url('img/razermouse.png');
+    background-size: cover;
+    background-position: center;
+    transition: .5s;
+}
+.container4 .produk .baris2 .bungkus2 p {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, .8);
+}
+/* Footer */
+.footer {
+    width: 100%;
+    height: 150px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    position: absolute;
+    top: 1900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+.footer .baris {
+    width: 300px;
+    height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.footer .baris a .fb {
+    width: 25px;
+    height: 25px;
+    background-image: url('img/fb.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: .5s;
+} 
+.footer .baris a .fb:hover {
+    transform: translateY(-10px);
+}
+.footer .baris a .ig {
+    width: 25px;
+    height: 25px;
+    background-image: url('img/ig.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: .5s;
+} 
+.footer .baris a .ig:hover {
+    transform: translateY(-10px);
+}
+.footer .baris a .tw {
+    width: 25px;
+    height: 25px;
+    background-image: url('img/tw.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: .5s;
+} 
+.footer .baris a .tw:hover {
+    transform: translateY(-10px);
+}
